@@ -33,7 +33,7 @@ make run-live
 
 ## Запросы в Постмане
 
-[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/28228886-62014812-efec-4b31-b24f-b1ef98b40980?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D28228886-62014812-efec-4b31-b24f-b1ef98b40980%26entityType%3Dcollection%26workspaceId%3D8267f593-6a79-467b-8380-fc86774160f2)
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/28228886-986b1103-b274-4b5c-9f60-855a3b30d0ee?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D28228886-986b1103-b274-4b5c-9f60-855a3b30d0ee%26entityType%3Dcollection%26workspaceId%3D8267f593-6a79-467b-8380-fc86774160f2)
 
 ## Структура проекта
 
