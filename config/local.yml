@@ -1,0 +1,4 @@
+dsn: "postgres://127.0.0.1/postgres?sslmode=disable&user=postgres&password=postgres"
+jwt_signing_key: "LxsKJywDL5O5PvgODZhBH12KE6k2yL8E"
+live_reload: true
+sqlc_auth_token: "SQLC_AUTH_TOKEN=sqlc_01HV9BC7GGHK3N4KZW33WYS8M1"

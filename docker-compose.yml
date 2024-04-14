@@ -1,0 +1,48 @@
+version: '2.1'
+services:
+  server:
+    image: server
+    build:
+      context: .
+      dockerfile: cmd/server/Dockerfile
+    volumes:
+      - /tmp/app:/var/log/app
+    ports:
+      - "8080:8080"
+    environment:
+      - APP_ENV=local
+      - APP_DSN=postgres://db/postgres?sslmode=disable&user=postgres&password=postgres
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+  db:
+    image: "postgres:alpine"
+    restart: always
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "postgres"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  redis:
+    image: "redis:alpine"
+    restart: always
+    ports:
+      - '6379:6379'
+    volumes:
+      - /testdata/redis:/root/redis
+    environment:
+      - REDIS_PASSWORD=
+      - REDIS_PORT=6379
+      - REDIS_DATABASES=0
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      interval: 1s
+      timeout: 3s
+      retries: 5
+
